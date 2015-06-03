@@ -21,7 +21,7 @@ module.exports = function (req, res, next) {
         default:
             break;
     }
-    links.push('https://'+ server +'/goto?group_id=1&key='+ key +'&val='+ value);
+    links.push('https://'+ server +'/goto?group_id=101&key='+ key +'&val='+ value);
   }
   var message = {
     text : links.join('\\n')

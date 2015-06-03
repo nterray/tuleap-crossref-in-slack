@@ -1,0 +1,15 @@
+{
+  "name": "tuleap-crossref-in-slack",
+  "version": "0.0.0",
+  "description": "Slack webhook to display links to tuleap cross references",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Terray <nicolas.terray@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.x.x",
+    "express": "^4.x.x"
+  }
+}

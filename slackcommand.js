@@ -12,12 +12,11 @@ module.exports = function (req, res, next) {
   }
 
   var message = {
-      text : '<https://tuleap.net/goto?group_id=101&key=request&val='+ (+req.body.text) +'>',
-      username : 'Tuleap CrossRef',
+      text : '<https://tuleap.net/goto?group_id=101&key=request&val='+ (+req.body.text) +'|/request '+ (+req.body.text) +'>',
+      username : 'Tuleap Community Reference',
       channel  : req.body.channel_id,
       icon_emoji : ':tulip:'
   };
-  console.log(message);
 
     send(message, function (error, status, body) {
         if (error) {
@@ -36,7 +35,6 @@ module.exports = function (req, res, next) {
 function send (payload, callback) {
   var path = process.env.INCOMING_WEBHOOK_PATH;
   var uri = 'https://hooks.slack.com/services' + path;
-console.log('Sending request to '+ uri); 
   request({
     uri: uri,
     method: 'POST',
@@ -45,7 +43,6 @@ console.log('Sending request to '+ uri);
     if (error) {
       return callback(error);
     }
-console.log(response); 
     callback(null, response.statusCode, body);
   });
 }
